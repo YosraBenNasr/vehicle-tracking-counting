@@ -1,0 +1,31 @@
+# Configuration par défaut (modèle COCO pré-entraîné, classes véhicules)
+detector:
+  model: yolov8n.pt          # ou yolo11n.pt, yolov8s.pt, runs/train/<exp>/weights/best.pt
+  tracker: bytetrack.yaml    # tracker fourni avec Ultralytics (ou configs/bytetrack_custom.yaml)
+  conf: 0.30
+  iou: 0.50
+  imgsz: 960
+  device: null               # null = auto (GPU si disponible) ; "cpu" ; "0"
+  vehicle_classes: [car, motorcycle, bus, truck]
+
+counting:
+  # coordonnées normalisées [x, y] entre 0 et 1 (indépendantes de la résolution)
+  line: [[0.0, 0.60], [1.0, 0.60]]
+  labels: [in, out]
+  count_once: true
+  anchor: bottom_center      # point de contact avec la route
+
+speed:
+  enabled: false
+  # haut-gauche, haut-droit, bas-droit, bas-gauche (à calibrer avec scripts/calibrate.py)
+  src_points: [[0.30, 0.45], [0.70, 0.45], [0.90, 0.90], [0.10, 0.90]]
+  width_m: 7.0
+  length_m: 30.0
+  window_s: 1.0
+  max_kmh: 200
+
+output:
+  out_dir: outputs
+  save_video: true
+  save_events_csv: true
+  trail_length: 30

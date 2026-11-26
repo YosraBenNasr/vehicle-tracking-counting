@@ -1,0 +1,9 @@
+# Versions testées : voir docs/ENVIRONMENT.md (à compléter avec `pip freeze` de VOTRE machine)
+ultralytics>=8.3,<9
+opencv-python>=4.9
+numpy>=1.26
+pandas>=2.1
+pyyaml>=6.0
+pillow>=10.0
+streamlit>=1.35
+pytest>=8.0

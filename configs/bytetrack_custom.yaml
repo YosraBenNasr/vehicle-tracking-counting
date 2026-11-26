@@ -1,0 +1,9 @@
+# Hyperparamètres ByteTrack (même format que le fichier fourni par Ultralytics).
+# Utilisation : detector.tracker: configs/bytetrack_custom.yaml
+tracker_type: bytetrack
+track_high_thresh: 0.25   # seuil de la 1re association (détections fiables)
+track_low_thresh: 0.10    # seuil de la 2e association (détections faibles, cœur de ByteTrack)
+new_track_thresh: 0.25    # score minimal pour créer une nouvelle trajectoire
+track_buffer: 30          # images pendant lesquelles on garde une trajectoire perdue
+match_thresh: 0.8         # seuil d'association (distance IoU)
+fuse_score: True
